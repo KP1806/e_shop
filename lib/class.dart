@@ -60,14 +60,8 @@ class SharedPrefs{
 class InfosCompte {
   String nom, prenom, id, mail, mdp, inscription;
 
-  InfosCompte(String nom, String prenom, String id, String mail, String mdp, String inscription){
-    this.nom = nom;
-    this.prenom = prenom;
-    this.id = id;
-    this.mail = mail;
-    this.mdp = mdp;
-    this.inscription = inscription;
-  }
+  InfosCompte(this.nom, this.id,this.inscription,this.mail, this.mdp, this.prenom) ;
+
 }
 
 

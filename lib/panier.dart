@@ -38,9 +38,6 @@ class _PanierState extends State<Panier> {
           IconButton(
             onPressed: () {
               Navigator.pushNamed(context, '/ThirdPage', arguments: new Arguments(listPanier, arg.infos, nbArticles));
-              setState(() {
-
-              });
             },
             icon: Icon(Icons.account_circle,),
           ),

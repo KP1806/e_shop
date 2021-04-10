@@ -6,6 +6,7 @@ import 'package:e_shop/panier.dart';
 import 'package:e_shop/class.dart';
 import 'package:e_shop/homePage.dart';
 
+import 'test.dart';
 
 /*Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,15 +14,18 @@ import 'package:e_shop/homePage.dart';
   runApp(MyApp());
 }*/
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
+class MyApp2 extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return myAppState();
+  }
+}
 
-
-
-
-class MyApp extends StatelessWidget {
+class myAppState extends State<MyApp2> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,15 +34,31 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      routes: {
-        '/': (context) => MyHomePage(title: "Shopping", listPanier: [], infos: InfosCompte("Povoa", "Killyan", "Killyan18", "kpovoa@numericable.fr", "azerty", "18/06/2000" ),),
-        '/SecondPage': (context) => Panier(),
-        '/ThirdPage': (context) => Compte(),
-        '/FourthPage': (context) => Informations(),
-      },
-      initialRoute: '/'
+      home: Test(),
     );
   }
 }
 
-
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        routes: {
+          '/': (context) => MyHomePage(
+                title: "Shopping",
+                listPanier: [],
+                infos: InfosCompte("Povoa", "Killyan", "Killyan18",
+                    "kpovoa@numericable.fr", "azerty", "18/06/2000"),
+              ),
+          '/SecondPage': (context) => Panier(),
+          '/ThirdPage': (context) => Compte(),
+          '/FourthPage': (context) => Informations(),
+        },
+        initialRoute: '/');
+  }
+}
